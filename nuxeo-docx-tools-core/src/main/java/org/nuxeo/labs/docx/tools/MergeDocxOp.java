@@ -13,7 +13,6 @@ import org.docx4j.wml.CTAltChunk;
 import org.nuxeo.ecm.automation.core.Constants;
 import org.nuxeo.ecm.automation.core.annotations.Operation;
 import org.nuxeo.ecm.automation.core.annotations.OperationMethod;
-import org.nuxeo.ecm.automation.core.annotations.Param;
 import org.nuxeo.ecm.automation.core.util.BlobList;
 import org.nuxeo.ecm.core.api.Blob;
 import org.nuxeo.ecm.core.api.NuxeoException;
@@ -27,14 +26,14 @@ import java.io.OutputStream;
 /**
  *
  */
-@Operation(id=MergeDocxOp.ID, category=Constants.CAT_DOCUMENT, label="MergeDocxOp", description="Describe here what your operation does.")
+@Operation(
+        id=MergeDocxOp.ID,
+        category=Constants.CAT_DOCUMENT,
+        label="MergeDocxOp",
+        description="Merge input DOCX blobs into one blob")
 public class MergeDocxOp {
 
     public static final String ID = "Document.MergeDocxOp";
-
-
-    @Param(name = "path", required = false)
-    protected String path;
 
     @OperationMethod
     public Blob run(BlobList blobs) {
